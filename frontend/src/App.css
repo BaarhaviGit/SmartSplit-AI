@@ -1,0 +1,369 @@
+.layout-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-body);
+}
+
+.layout-main {
+  flex: 1;
+  margin-left: 260px; /* Sidebar width */
+  padding: 40px;
+  position: relative;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-brand-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-illustration {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  filter: drop-shadow(0 4px 8px rgba(37, 99, 235, 0.15));
+}
+
+.header-brand h1 {
+  font-size: 32px;
+  color: var(--text-main);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.header-brand p {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.85); /* Slightly translucent for glassmorphism */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-color);
+  margin-bottom: 32px;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.card-subtitle {
+  color: var(--text-muted);
+  margin-top: -16px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background-color: #111111;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+}
+
+.btn-secondary {
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background-color: #F3F4F6;
+}
+
+/* Lists */
+.expense-list, .settlement-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.expense-item, .settlement-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.expense-item:hover, .settlement-item:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: #D1D5DB;
+}
+
+.expense-desc {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.expense-meta {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Analytics */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.stat-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+}
+
+.stat-box.highlight {
+  /* Using accent color only for analytics highlight */
+  border-color: var(--accent-color);
+  background-color: #EFF6FF; /* Very light blue */
+}
+
+.stat-box.highlight .stat-value {
+  color: var(--accent-color);
+}
+
+.stat-label {
+  display: block;
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.spending-breakdown h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.spending-breakdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+}
+
+.spending-breakdown li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.spending-breakdown li:last-child {
+  border-bottom: none;
+}
+
+/* Settle Up / Settlement Cards */
+.settlements-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.settlement-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settlement-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.settlement-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.settlement-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settlement-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.settlement-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-color), #60A5FA);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.settlement-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge-pending {
+  background-color: #FFF7ED;
+  color: #EA580C; /* Orange */
+}
+
+.badge-paid {
+  background-color: var(--success-bg);
+  color: var(--success); /* Green */
+}
+
+.settlement-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settlement-amount-display {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.settlement-action-area {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-pay-action {
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-pay-action:hover:not(:disabled) {
+  background-color: #1D4ED8;
+}
+
+.btn-pay-action:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.status-text {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.status-text.success {
+  color: var(--success);
+}
+
+.status-text.muted {
+  color: var(--text-muted);
+}
+
+.empty-state {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 32px 0;
+  font-size: 16px;
+}
