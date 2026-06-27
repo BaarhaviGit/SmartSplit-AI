@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://smartsplit-ai-jgn6.onrender.com/api' : 'http://localhost:4000/api');
 
 function getAuthHeaders() {
   const token = localStorage.getItem('smartsplit_token');
